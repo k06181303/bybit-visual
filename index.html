@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bybit 成交量統計 + 即時清單</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { background: #111; color: white; font-family: monospace; margin: 0; padding: 20px; }
+    h2 { color: #0f0; margin-bottom: 5px; }
+    #volumeChart { max-width: 300px; margin-bottom: 30px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 6px 10px; text-align: left; }
+    thead { background: #333; }
+    .buy { background-color: #013301; color: #afffaf; }
+    .sell { background-color: #330101; color: #ffafaf; }
+  </style>
+</head>
+<body>
+  <h2>📊 成交量統計（30s / 1m / 15m / 30m）</h2>
+  <canvas id="volumeChart" width="300" height="250"></canvas>
+  <h2>📍 即時成交清單（Bybit）</h2>
+  <table>
+    <thead>
+      <tr><th>價格</th><th>數量</th><th>方向</th><th>時間</th></tr>
+    </thead>
+    <tbody id="tradeTable"></tbody>
+  </table>
+
+  <script src="trade_volume_ui.js"></script>
+</body>
+</html>
